@@ -1,0 +1,13 @@
+section.section form {
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 70%;
+}
+
+label.appLabel {
+    display: flex;
+    align-items: center;
+}

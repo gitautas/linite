@@ -1,0 +1,13 @@
+- var categories = {'Web Browsers': ['Chrome', 'Chromium', 'Brave', 'Firefox', 'Opera', 'Qutebrowser'], 'Developer Tools': ['Emacs', 'Neovim', 'VSCode', 'Atom', 'Brackets', 'Eclipse', 'IntelliJ', 'PyCharm', 'WebStorm'], 'Messaging': ['Discord', 'Slack', 'Pidgin', 'Thunderbird', 'Hexchat', 'Signal', 'Telegram', 'Mumble'], 'Cloud Synchronization': ['PCloud', 'Dropbox', 'Nextcloud'], 'File Sharing': ['qBitTorrent', 'Deluge', 'FileZilla'], 'Media': ['VLC', 'SMPlayer', 'Celluloid', 'Kodi', 'Plex', 'Audacity', 'Handbrake', 'Olive', 'Kdenlive', 'Krita', 'GIMP', 'Inkscape'], 'Runtimes': ['Node.js', 'OpenJDK', '.NETCore', 'Python'], 'Games': ['Steam', 'Lutris'], 'Documents': ['LibreOffice', 'OpenOffice', 'WPSOffice']}
+section.section
+    form
+        each category, entry in categories
+            section.section.appSection
+                label.label= entry
+                ul.apps
+                    each item in category
+                        li
+                            label.appLabel
+                                input(type="checkbox" class="mr-2")
+                                img(class="mr-1" width="20" src=`icons/${entry.toLowerCase().replace(/\s/g , "-")}/${item.toLowerCase().replace('.', '').replace(' ', '')}.svg`)
+                                span.has-text-dark= item
