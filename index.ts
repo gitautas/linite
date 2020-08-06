@@ -1,13 +1,36 @@
 import express from "express";
 import categories from "./apps.json";
+import Hashids, * as hashids from "hashids";
 import * as jwt from "jsonwebtoken";
-const jwtSecret = "linite420";
-let jwtHeader = "";
-let jwtPayload = "";
-let jwtSignature = "";
+
+const appList = [];
+const salt = "linite420";
+
+const hasher = new Hashids(salt);
 
 const app = express();
 const port = 8080;
+
+for (let [category, appArr] of Object.entries(categories.categories)) {
+  for (let app of appArr) {
+    appList.push(app);
+  }
+}
+
+function generateAppCode(selectedList) {
+  let appToken = [];
+  for (const app of appList) {
+    for (const selectedApp of selectedList) {
+      if (app === selectedApp) {
+        appToken.push(appList.indexOf(selectedApp));
+      }
+    }
+  }
+  appToken = appToken.sort((a, b) => {
+    return a - b;
+  });
+  return hasher.encode(appToken);
+}
 
 app.set("view engine", "pug");
 app.use(express.static("public"));
@@ -17,23 +40,19 @@ app.get("/", (req, res) => {
   res.render("index", categories);
 });
 
-app.post("/apps", (req, res) => {
-  const tokenArr = jwt.sign(req.body, jwtSecret).split(".");
-  jwtHeader = tokenArr[0];
-  jwtPayload = tokenArr[1];
-  jwtSignature = tokenArr[2];
-
-  console.log(jwtPayload);
-  res.send(jwtPayload);
+app.post("/app-code", (req, res) => {
+  const code = generateAppCode(req.body.apps);
+  res.send(code);
 });
 
 app.get("/*", (req, res) => {
   const payload = req.url.replace("/", "");
-  const decoded = jwt.verify(
-    [jwtHeader, payload, jwtSignature].join("."),
-    jwtSecret
-  )["apps"];
-  res.send(`Dude nice! You're getting ${JSON.stringify(decoded)}`);
+  const decoded = hasher.decode(payload);
+  let apps = [];
+  for (let index of decoded) {
+    apps.push(appList[parseInt(index.toString())]);
+  }
+  res.send(`Dude nice! You're getting ${JSON.stringify(apps)}`);
 });
 
 app.listen(port, () => {

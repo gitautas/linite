@@ -8,6 +8,20 @@
       "Opera",
       "Qutebrowser"
     ],
+    "Media": [
+      "VLC",
+      "SMPlayer",
+      "Celluloid",
+      "Kodi",
+      "Plex",
+      "Audacity",
+      "Handbrake",
+      "Olive",
+      "Kdenlive",
+      "Krita",
+      "GIMP",
+      "Inkscape"
+    ],
     "Developer Tools": [
       "Emacs",
       "Neovim",
@@ -31,20 +45,6 @@
     ],
     "Cloud Synchronization": ["PCloud", "Dropbox", "Nextcloud"],
     "File Sharing": ["qBitTorrent", "Deluge", "FileZilla"],
-    "Media": [
-      "VLC",
-      "SMPlayer",
-      "Celluloid",
-      "Kodi",
-      "Plex",
-      "Audacity",
-      "Handbrake",
-      "Olive",
-      "Kdenlive",
-      "Krita",
-      "GIMP",
-      "Inkscape"
-    ],
     "Runtimes": ["Node.js", "OpenJDK", ".NETCore", "Python"],
     "Games": ["Steam", "Lutris"],
     "Documents": ["LibreOffice", "OpenOffice", "WPSOffice"]

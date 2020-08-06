@@ -7,8 +7,10 @@ const apps = [];
 
 let appCode = "";
 
+checks.forEach((currentValue) => (currentValue.children[0].checked = false));
+
 async function getAppCode() {
-  code = await fetch("/apps", {
+  code = await fetch("/app-code", {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({apps: apps}),
@@ -17,18 +19,6 @@ async function getAppCode() {
     .then((response) => {
       appCode = response;
       command.innerHTML = "curl http://localhost:8080/" + response;
-      testREST(response);
-    });
-}
-
-async function testREST(code) {
-  resp = await fetch("/" + code, {
-    method: "GET",
-    headers: {"Content-Type": "application/json"},
-  })
-    .then((response) => response.text())
-    .then((response) => {
-      console.log(response);
     });
 }
 
