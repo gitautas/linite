@@ -13,6 +13,7 @@ generateAppList();
 app.set("view engine", "pug");
 app.use(express.static("public"));
 app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 app.get("/", (req, res) => {
   res.render("index", categories);
@@ -25,12 +26,17 @@ app.post("/app-code", (req, res) => {
 
 app.get("/*", (req, res) => {
   const payload = req.url.replace("/", "");
-  const decoded = hasher.decode(payload);
+
+  res.send(osScript(payload));
+});
+
+app.post("/distro/*", (req, res) => {
+  const decoded = hasher.decode(req.body.CODE);
   let apps = [];
   for (let index of decoded) {
     apps.push(appList[parseInt(index.toString())]);
   }
-  res.send(`Dude nice! You're getting ${JSON.stringify(apps)}`);
+  res.send(installScript(req.body.PRETTY_NAME, apps));
 });
 
 app.listen(port, () => {
@@ -58,4 +64,29 @@ function generateAppList() {
       appList.push(app);
     }
   }
+}
+
+function installScript(os, apps) {
+  return `
+echo You are using ${os}
+echo and you want to install ${apps}
+`;
+}
+
+function osScript(code) {
+  return `
+#!/usr/bin/env bash
+
+args=()
+
+while read line
+do
+        args+=("-d" "$line")
+done < /etc/os-release
+bash -c "$(curl -s \
+        "\u0024{args[@]}" \
+        -d CODE="${code}" \
+                http://localhost:8080/distro/RmUmc7iMFbsmuYYtl9 )"
+
+`;
 }

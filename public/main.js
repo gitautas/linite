@@ -18,7 +18,7 @@ async function getAppCode() {
     .then((response) => response.text())
     .then((response) => {
       appCode = response;
-      command.innerHTML = "curl http://localhost:8080/" + response;
+      command.innerHTML = `bash -c "$(curl -fsSL http://localhost:8080/${response})"`;
     });
 }
 
