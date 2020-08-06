@@ -1,36 +1,14 @@
 import express from "express";
 import categories from "./apps.json";
 import Hashids, * as hashids from "hashids";
-import * as jwt from "jsonwebtoken";
 
 const appList = [];
 const salt = "linite420";
-
 const hasher = new Hashids(salt);
-
 const app = express();
 const port = 8080;
 
-for (let [category, appArr] of Object.entries(categories.categories)) {
-  for (let app of appArr) {
-    appList.push(app);
-  }
-}
-
-function generateAppCode(selectedList) {
-  let appToken = [];
-  for (const app of appList) {
-    for (const selectedApp of selectedList) {
-      if (app === selectedApp) {
-        appToken.push(appList.indexOf(selectedApp));
-      }
-    }
-  }
-  appToken = appToken.sort((a, b) => {
-    return a - b;
-  });
-  return hasher.encode(appToken);
-}
+generateAppList();
 
 app.set("view engine", "pug");
 app.use(express.static("public"));
@@ -58,3 +36,26 @@ app.get("/*", (req, res) => {
 app.listen(port, () => {
   console.log(`Serving app on http://localhost:${port}/`);
 });
+
+function generateAppCode(selectedList) {
+  let appToken = [];
+  for (const app of appList) {
+    for (const selectedApp of selectedList) {
+      if (app === selectedApp) {
+        appToken.push(appList.indexOf(selectedApp));
+      }
+    }
+  }
+  appToken = appToken.sort((a, b) => {
+    return a - b;
+  });
+  return hasher.encode(appToken);
+}
+
+function generateAppList() {
+  for (let [category, appArr] of Object.entries(categories.categories)) {
+    for (let app of appArr) {
+      appList.push(app);
+    }
+  }
+}
