@@ -1,6 +1,21 @@
 import express from "express";
+import winston from "winston";
 import categories from "./apps.json";
 import Hashids, * as hashids from "hashids";
+
+const log = winston.createLogger({
+  level: "debug",
+  format: winston.format.combine(
+    winston.format.colorize(),
+    winston.format.timestamp({
+      format: 'YYYY-MM-DD HH:mm:ss'
+    }),
+    winston.format.printf(info => `[${info.timestamp}][${info.level}]: ${info.message}`)),
+  transports: [
+    new winston.transports.Console(),
+    new winston.transports.File({ filename: "linite.log" })
+    ]
+});
 
 const appList = [];
 const salt = "linite420";
@@ -17,17 +32,20 @@ app.use(express.urlencoded({extended: true}));
 
 app.get("/", (req, res) => {
   res.render("index", categories);
+  log.log("info", `${req.connection.remoteAddress} accessing /`)
 });
 
 app.post("/app-code", (req, res) => {
   const code = generateAppCode(req.body.apps);
   res.send(code);
+  log.log("debug", `${req.connection.remoteAddress} asking for app code`)
 });
 
 app.get("/*", (req, res) => {
   const payload = req.url.replace("/", "");
 
   res.send(osScript(payload));
+  log.log("debug", `${req.connection.remoteAddress} sending OS info`)
 });
 
 app.post("/distro/*", (req, res) => {
@@ -37,10 +55,11 @@ app.post("/distro/*", (req, res) => {
     apps.push(appList[parseInt(index.toString())]);
   }
   res.send(installScript(req.body.PRETTY_NAME, apps));
+  log.log("info", `sending install script to ${req.connection.remoteAddress}`)
 });
 
 app.listen(port, () => {
-  console.log(`Serving app on http://localhost:${port}/`);
+  log.log("info", `Serving app on http://localhost:${port}/`);
 });
 
 function generateAppCode(selectedList) {
@@ -67,6 +86,7 @@ function generateAppList() {
 }
 
 function installScript(os, apps) {
+  log.log("debug", "generating install script");
   return `
 echo You are using ${os}
 echo and you want to install ${apps}
