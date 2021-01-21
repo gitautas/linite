@@ -1,0 +1,368 @@
+Info 0    [22:9:15.444] Starting TS Server
+Info 1    [22:9:15.446] Version: 3.9.7
+Info 2    [22:9:15.446] Arguments: /usr/bin/node /home/gintautas/Projects/linite/node_modules/.bin/tsserver --logFile /home/gintautas/Projects/linite/.log/tsserver.log --logVerbosity info --cancellationPipeName /tmp/a9dc1331c5e91b51356da2c3d731141a/tscancellation*
+Info 3    [22:9:15.446] Platform: linux NodeVersion: 15 CaseSensitive: true
+Info 4    [22:9:15.455] Search path: /home/gintautas/Projects/linite
+Info 5    [22:9:15.455] For info: /home/gintautas/Projects/linite/index.ts :: Config file name: /home/gintautas/Projects/linite/tsconfig.json
+Info 6    [22:9:15.456] Opened configuration file /home/gintautas/Projects/linite/tsconfig.json
+Info 7    [22:9:15.473] Config: /home/gintautas/Projects/linite/tsconfig.json : {
+ "rootNames": [
+  "/home/gintautas/Projects/linite/index.ts"
+ ],
+ "options": {
+  "resolveJsonModule": true,
+  "esModuleInterop": true,
+  "configFilePath": "/home/gintautas/Projects/linite/tsconfig.json"
+ }
+}
+Info 8    [22:9:15.543] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 9    [22:9:16.524] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 1 structureChanged: true Elapsed: 981ms
+Info 10   [22:9:16.524] Project '/home/gintautas/Projects/linite/tsconfig.json' (Configured)
+Info 11   [22:9:16.524] 	Files (97)
+
+Info 12   [22:9:16.524] -----------------------------------------------
+Info 13   [22:9:17.531] DirectoryWatcher:: Triggered with /home/gintautas/Projects/linite :: WatchInfo: /home/gintautas/Projects/linite 1 undefined Project: /home/gintautas/Projects/linite/tsconfig.json WatchType: Wild card directory
+Info 14   [22:9:17.531] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/gintautas/Projects/linite :: WatchInfo: /home/gintautas/Projects/linite 1 undefined Project: /home/gintautas/Projects/linite/tsconfig.json WatchType: Wild card directory
+Info 15   [22:9:17.788] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 16   [22:9:17.788] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 2 structureChanged: false Elapsed: 0ms
+Info 17   [22:9:20.31] Before ensureProjectForOpenFiles:
+Info 18   [22:9:20.31] After ensureProjectForOpenFiles:
+Info 19   [22:9:20.31] got projects updated in background, updating diagnostics for /home/gintautas/Projects/linite/index.ts
+Info 20   [22:9:26.283] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 21   [22:9:26.311] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 3 structureChanged: true Elapsed: 28ms
+Info 22   [22:9:26.311] Project '/home/gintautas/Projects/linite/tsconfig.json' (Configured)
+Info 23   [22:9:26.311] 	Files (95)
+
+Info 24   [22:9:26.311] -----------------------------------------------
+Err 25    [22:9:26.456] Exception on executing command {"command":"getCodeFixes","seq":44,"type":"request","arguments":{"file":"/home/gintautas/Projects/linite/index.ts","startLine":4,"startOffset":8,"endLine":4,"endOffset":8,"errorCodes":[2497,6133]}}:
+
+    Cannot read property 'kind' of undefined
+
+    TypeError: Cannot read property 'kind' of undefined
+        at Object.isImportClause (/home/gintautas/Projects/linite/node_modules/typescript/lib/tsserver.js:11638:21)
+        at Object.deleteDeclaration (/home/gintautas/Projects/linite/node_modules/typescript/lib/tsserver.js:127231:32)
+        at _loop_9 (/home/gintautas/Projects/linite/node_modules/typescript/lib/tsserver.js:126742:47)
+        at ChangeTracker.finishDeleteDeclarations (/home/gintautas/Projects/linite/node_modules/typescript/lib/tsserver.js:126749:21)
+        at ChangeTracker.getChanges (/home/gintautas/Projects/linite/node_modules/typescript/lib/tsserver.js:126769:22)
+        at Function.ChangeTracker.with (/home/gintautas/Projects/linite/node_modules/typescript/lib/tsserver.js:126224:32)
+        at Object.getCodeActions (/home/gintautas/Projects/linite/node_modules/typescript/lib/tsserver.js:131598:69)
+        at /home/gintautas/Projects/linite/node_modules/typescript/lib/tsserver.js:127394:77
+        at Object.flatMap (/home/gintautas/Projects/linite/node_modules/typescript/lib/tsserver.js:465:25)
+        at Object.getFixes (/home/gintautas/Projects/linite/node_modules/typescript/lib/tsserver.js:127394:23)
+        at /home/gintautas/Projects/linite/node_modules/typescript/lib/tsserver.js:139206:35
+        at Object.flatMap (/home/gintautas/Projects/linite/node_modules/typescript/lib/tsserver.js:465:25)
+        at Object.getCodeFixesAtPosition (/home/gintautas/Projects/linite/node_modules/typescript/lib/tsserver.js:139204:23)
+        at IOSession.Session.getCodeFixes (/home/gintautas/Projects/linite/node_modules/typescript/lib/tsserver.js:149305:64)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/gintautas/Projects/linite/node_modules/typescript/lib/tsserver.js:148042:61)
+        at /home/gintautas/Projects/linite/node_modules/typescript/lib/tsserver.js:149555:88
+        at IOSession.Session.executeWithRequestId (/home/gintautas/Projects/linite/node_modules/typescript/lib/tsserver.js:149546:28)
+        at IOSession.Session.executeCommand (/home/gintautas/Projects/linite/node_modules/typescript/lib/tsserver.js:149555:33)
+        at IOSession.Session.onMessage (/home/gintautas/Projects/linite/node_modules/typescript/lib/tsserver.js:149579:35)
+        at Interface.<anonymous> (/home/gintautas/Projects/linite/node_modules/typescript/lib/tsserver.js:150895:27)
+        at Interface.emit (node:events:379:20)
+        at Interface._onLine (node:readline:364:10)
+        at Interface._normalWrite (node:readline:509:12)
+        at Socket.ondata (node:readline:216:10)
+        at Socket.emit (node:events:379:20)
+        at addChunk (node:internal/streams/readable:313:12)
+        at readableAddChunk (node:internal/streams/readable:288:9)
+        at Socket.Readable.push (node:internal/streams/readable:227:10)
+        at Pipe.onStreamRead (node:internal/stream_base_commons:190:23)
+Info 26   [22:9:26.457] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 27   [22:9:26.473] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 4 structureChanged: true Elapsed: 16ms
+Info 28   [22:9:26.473] Project '/home/gintautas/Projects/linite/tsconfig.json' (Configured)
+Info 29   [22:9:26.473] 	Files (97)
+
+Info 30   [22:9:26.473] -----------------------------------------------
+Info 31   [22:9:26.766] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 32   [22:9:26.772] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 5 structureChanged: false Elapsed: 6ms
+Info 33   [22:9:26.772] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 34   [22:9:29.315] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 35   [22:9:29.331] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 6 structureChanged: true Elapsed: 16ms
+Info 36   [22:9:29.331] Project '/home/gintautas/Projects/linite/tsconfig.json' (Configured)
+Info 37   [22:9:29.331] 	Files (95)
+
+Info 38   [22:9:29.331] -----------------------------------------------
+Info 39   [22:9:30.541] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 40   [22:9:30.560] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 7 structureChanged: true Elapsed: 19ms
+Info 41   [22:9:30.560] Project '/home/gintautas/Projects/linite/tsconfig.json' (Configured)
+Info 42   [22:9:30.560] 	Files (97)
+
+Info 43   [22:9:30.560] -----------------------------------------------
+Info 44   [22:9:31.13] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 45   [22:9:31.22] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 8 structureChanged: false Elapsed: 9ms
+Info 46   [22:9:31.22] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 47   [22:9:34.516] forEachExternalModuleToImportFrom: filtered out 50 modules by package.json contents
+Info 48   [22:9:38.740] forEachExternalModuleToImportFrom: filtered out 50 modules by package.json contents
+Info 49   [22:9:39.40] forEachExternalModuleToImportFrom: filtered out 50 modules by package.json contents
+Info 50   [22:9:39.879] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 51   [22:9:39.888] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 9 structureChanged: false Elapsed: 8ms
+Info 52   [22:9:39.888] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 53   [22:9:39.889] getCompletionData: Get current token: 0
+Info 54   [22:9:39.889] getCompletionData: Is inside comment: 0
+Info 55   [22:9:39.889] getCompletionData: Get previous token 1: 0
+Info 56   [22:9:39.889] getCompletionData: Get previous token 2: 0
+Info 57   [22:9:39.889] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 58   [22:9:39.893] getSymbolsFromOtherSourceFileExports: Recomputing list
+Info 59   [22:9:39.901] forEachExternalModuleToImportFrom: filtered out 50 modules by package.json contents
+Info 60   [22:9:39.902] getSymbolsFromOtherSourceFileExports: 9
+Info 61   [22:9:39.903] getCompletionData: Semantic work: 14
+Info 62   [22:9:39.912] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 8
+Info 63   [22:9:39.948] getCompletionData: Get current token: 0
+Info 64   [22:9:39.948] getCompletionData: Is inside comment: 0
+Info 65   [22:9:39.948] getCompletionData: Get previous token 1: 0
+Info 66   [22:9:39.948] getCompletionData: Get previous token 2: 0
+Info 67   [22:9:39.948] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 68   [22:9:39.951] getSymbolsFromOtherSourceFileExports: Using cached list
+Info 69   [22:9:39.952] getCompletionData: Semantic work: 4
+Info 70   [22:9:39.958] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 6
+Info 71   [22:9:39.964] getCompletionData: Get current token: 0
+Info 72   [22:9:39.964] getCompletionData: Is inside comment: 0
+Info 73   [22:9:39.964] getCompletionData: Get previous token 1: 0
+Info 74   [22:9:39.964] getCompletionData: Get previous token 2: 0
+Info 75   [22:9:39.964] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 76   [22:9:39.968] getSymbolsFromOtherSourceFileExports: Using cached list
+Info 77   [22:9:39.972] getCompletionData: Semantic work: 8
+Info 78   [22:9:39.981] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 9
+Info 79   [22:9:39.984] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 80   [22:9:39.992] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 10 structureChanged: false Elapsed: 8ms
+Info 81   [22:9:39.993] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 82   [22:9:39.993] getCompletionData: Get current token: 0
+Info 83   [22:9:39.993] getCompletionData: Is inside comment: 0
+Info 84   [22:9:39.993] getCompletionData: Get previous token 1: 0
+Info 85   [22:9:39.993] getCompletionData: Get previous token 2: 0
+Info 86   [22:9:39.993] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 87   [22:9:39.996] getSymbolsFromOtherSourceFileExports: Using cached list
+Info 88   [22:9:39.998] getCompletionData: Semantic work: 5
+Info 89   [22:9:40.5] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 6
+Info 90   [22:9:40.11] getCompletionData: Get current token: 0
+Info 91   [22:9:40.11] getCompletionData: Is inside comment: 0
+Info 92   [22:9:40.11] getCompletionData: Get previous token 1: 0
+Info 93   [22:9:40.11] getCompletionData: Get previous token 2: 0
+Info 94   [22:9:40.11] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 95   [22:9:40.14] getSymbolsFromOtherSourceFileExports: Using cached list
+Info 96   [22:9:40.16] getCompletionData: Semantic work: 5
+Info 97   [22:9:40.22] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 6
+Info 98   [22:9:40.25] getCompletionData: Get current token: 0
+Info 99   [22:9:40.25] getCompletionData: Is inside comment: 0
+Info 100  [22:9:40.25] getCompletionData: Get previous token 1: 0
+Info 101  [22:9:40.25] getCompletionData: Get previous token 2: 0
+Info 102  [22:9:40.25] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 103  [22:9:40.28] getSymbolsFromOtherSourceFileExports: Using cached list
+Info 104  [22:9:40.28] getCompletionData: Semantic work: 3
+Info 105  [22:9:40.35] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 7
+Info 106  [22:9:40.37] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 107  [22:9:40.47] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 11 structureChanged: false Elapsed: 10ms
+Info 108  [22:9:40.47] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 109  [22:9:40.47] getCompletionData: Get current token: 0
+Info 110  [22:9:40.47] getCompletionData: Is inside comment: 0
+Info 111  [22:9:40.47] getCompletionData: Get previous token 1: 0
+Info 112  [22:9:40.47] getCompletionData: Get previous token 2: 0
+Info 113  [22:9:40.47] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 114  [22:9:40.50] getSymbolsFromOtherSourceFileExports: Using cached list
+Info 115  [22:9:40.52] getCompletionData: Semantic work: 5
+Info 116  [22:9:40.57] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 4
+Info 117  [22:9:40.143] getCompletionData: Get current token: 0
+Info 118  [22:9:40.144] getCompletionData: Is inside comment: 0
+Info 119  [22:9:40.144] getCompletionData: Get previous token 1: 0
+Info 120  [22:9:40.144] getCompletionData: Get previous token 2: 0
+Info 121  [22:9:40.144] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 122  [22:9:40.145] getSymbolsFromOtherSourceFileExports: Using cached list
+Info 123  [22:9:40.145] getCompletionData: Semantic work: 1
+Info 124  [22:9:40.150] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 5
+Info 125  [22:9:40.155] getCompletionData: Get current token: 0
+Info 126  [22:9:40.155] getCompletionData: Is inside comment: 0
+Info 127  [22:9:40.155] getCompletionData: Get previous token 1: 0
+Info 128  [22:9:40.155] getCompletionData: Get previous token 2: 0
+Info 129  [22:9:40.155] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 130  [22:9:40.157] getSymbolsFromOtherSourceFileExports: Using cached list
+Info 131  [22:9:40.158] getCompletionData: Semantic work: 3
+Info 132  [22:9:40.160] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 2
+Info 133  [22:9:40.162] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 134  [22:9:40.172] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 12 structureChanged: false Elapsed: 10ms
+Info 135  [22:9:40.172] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 136  [22:9:40.172] getCompletionData: Get current token: 0
+Info 137  [22:9:40.172] getCompletionData: Is inside comment: 0
+Info 138  [22:9:40.172] getCompletionData: Get previous token 1: 0
+Info 139  [22:9:40.172] getCompletionData: Get previous token 2: 0
+Info 140  [22:9:40.172] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 141  [22:9:40.174] getSymbolsFromOtherSourceFileExports: Using cached list
+Info 142  [22:9:40.177] getCompletionData: Semantic work: 5
+Info 143  [22:9:40.181] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 4
+Info 144  [22:9:40.549] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 145  [22:9:40.555] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 13 structureChanged: false Elapsed: 6ms
+Info 146  [22:9:40.555] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 147  [22:9:41.681] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 148  [22:9:41.687] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 14 structureChanged: false Elapsed: 6ms
+Info 149  [22:9:41.687] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 150  [22:9:41.687] getCompletionData: Get current token: 0
+Info 151  [22:9:41.687] getCompletionData: Is inside comment: 0
+Info 152  [22:9:41.687] getCompletionData: Get previous token 1: 0
+Info 153  [22:9:41.687] getCompletionData: Get previous token 2: 0
+Info 154  [22:9:41.687] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 155  [22:9:41.689] getSymbolsFromOtherSourceFileExports: Using cached list
+Info 156  [22:9:41.694] getCompletionData: Semantic work: 7
+Info 157  [22:9:41.698] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 4
+Info 158  [22:9:42.85] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 159  [22:9:42.94] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 15 structureChanged: false Elapsed: 9ms
+Info 160  [22:9:42.95] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 161  [22:9:42.95] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 162  [22:9:42.104] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 16 structureChanged: false Elapsed: 9ms
+Info 163  [22:9:42.104] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 164  [22:9:42.256] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 165  [22:9:42.261] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 17 structureChanged: false Elapsed: 5ms
+Info 166  [22:9:42.261] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 167  [22:9:42.261] getCompletionData: Get current token: 0
+Info 168  [22:9:42.261] getCompletionData: Is inside comment: 0
+Info 169  [22:9:42.261] getCompletionData: Get previous token 1: 0
+Info 170  [22:9:42.261] getCompletionData: Get previous token 2: 0
+Info 171  [22:9:42.261] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 172  [22:9:42.264] getSymbolsFromOtherSourceFileExports: Using cached list
+Info 173  [22:9:42.269] getCompletionData: Semantic work: 8
+Info 174  [22:9:42.277] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 7
+Info 175  [22:9:42.660] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 176  [22:9:42.666] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 18 structureChanged: false Elapsed: 5ms
+Info 177  [22:9:42.666] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 178  [22:9:42.985] getCompletionData: Get current token: 0
+Info 179  [22:9:42.986] getCompletionData: Is inside comment: 1
+Info 180  [22:9:42.986] getCompletionData: Get previous token 1: 0
+Info 181  [22:9:42.986] getCompletionData: Get previous token 2: 0
+Info 182  [22:9:42.986] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 183  [22:9:42.988] getSymbolsFromOtherSourceFileExports: Recomputing list for details entry
+Info 184  [22:9:42.997] forEachExternalModuleToImportFrom: filtered out 0 modules by package.json contents
+Info 185  [22:9:42.997] getSymbolsFromOtherSourceFileExports: 9
+Info 186  [22:9:43.1] getCompletionData: Semantic work: 15
+Info 187  [22:9:44.5] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 188  [22:9:44.10] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 19 structureChanged: false Elapsed: 5ms
+Info 189  [22:9:44.10] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 190  [22:9:45.409] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 191  [22:9:45.413] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 20 structureChanged: false Elapsed: 4ms
+Info 192  [22:9:45.413] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 193  [22:9:46.64] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 194  [22:9:46.68] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 21 structureChanged: false Elapsed: 4ms
+Info 195  [22:9:46.69] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 196  [22:9:46.170] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 197  [22:9:46.177] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 22 structureChanged: false Elapsed: 7ms
+Info 198  [22:9:46.177] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 199  [22:9:46.177] getCompletionData: Get current token: 0
+Info 200  [22:9:46.177] getCompletionData: Is inside comment: 0
+Info 201  [22:9:46.177] getCompletionData: Get previous token 1: 0
+Info 202  [22:9:46.177] getCompletionData: Get previous token 2: 0
+Info 203  [22:9:46.177] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 204  [22:9:46.179] getSymbolsFromOtherSourceFileExports: Using cached list
+Info 205  [22:9:46.183] getCompletionData: Semantic work: 6
+Info 206  [22:9:46.187] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 4
+Info 207  [22:9:46.760] getCompletionData: Get current token: 0
+Info 208  [22:9:46.760] getCompletionData: Is inside comment: 0
+Info 209  [22:9:46.760] getCompletionData: Get previous token 1: 0
+Info 210  [22:9:46.760] getCompletionData: Get previous token 2: 0
+Info 211  [22:9:46.760] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 212  [22:9:46.763] getSymbolsFromOtherSourceFileExports: Using cached list
+Info 213  [22:9:46.763] getCompletionData: Semantic work: 3
+Info 214  [22:9:47.15] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 215  [22:9:47.44] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 23 structureChanged: true Elapsed: 29ms
+Info 216  [22:9:47.44] Different program with same set of files:: oldProgram.structureIsReused:: 1
+Info 217  [22:9:48.237] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 218  [22:9:48.246] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 24 structureChanged: false Elapsed: 9ms
+Info 219  [22:9:48.246] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 220  [22:9:49.999] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 221  [22:9:50.3] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 25 structureChanged: false Elapsed: 4ms
+Info 222  [22:9:50.3] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 223  [22:9:56.180] DirectoryWatcher:: Triggered with /home/gintautas/Projects/linite/linite.log :: WatchInfo: /home/gintautas/Projects/linite 0 undefined Project: /home/gintautas/Projects/linite/tsconfig.json WatchType: Failed Lookup Locations
+Info 224  [22:9:56.181] Elapsed:: 1ms DirectoryWatcher:: Triggered with /home/gintautas/Projects/linite/linite.log :: WatchInfo: /home/gintautas/Projects/linite 0 undefined Project: /home/gintautas/Projects/linite/tsconfig.json WatchType: Failed Lookup Locations
+Info 225  [22:9:57.182] DirectoryWatcher:: Triggered with /home/gintautas/Projects/linite :: WatchInfo: /home/gintautas/Projects/linite 1 undefined Project: /home/gintautas/Projects/linite/tsconfig.json WatchType: Wild card directory
+Info 226  [22:9:57.183] Elapsed:: 1ms DirectoryWatcher:: Triggered with /home/gintautas/Projects/linite :: WatchInfo: /home/gintautas/Projects/linite 1 undefined Project: /home/gintautas/Projects/linite/tsconfig.json WatchType: Wild card directory
+Info 227  [22:9:57.442] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 228  [22:9:57.442] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 26 structureChanged: false Elapsed: 0ms
+Info 229  [22:9:59.683] Before ensureProjectForOpenFiles:
+Info 230  [22:9:59.683] After ensureProjectForOpenFiles:
+Info 231  [22:9:59.684] got projects updated in background, updating diagnostics for /home/gintautas/Projects/linite/index.ts
+Info 232  [22:10:4.920] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 233  [22:10:4.941] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 27 structureChanged: true Elapsed: 21ms
+Info 234  [22:10:4.941] Different program with same set of files:: oldProgram.structureIsReused:: 1
+Info 235  [22:10:7.278] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 236  [22:10:7.303] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 28 structureChanged: true Elapsed: 25ms
+Info 237  [22:10:7.303] Different program with same set of files:: oldProgram.structureIsReused:: 1
+Info 238  [22:10:8.176] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 239  [22:10:8.190] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 29 structureChanged: true Elapsed: 14ms
+Info 240  [22:10:8.190] Different program with same set of files:: oldProgram.structureIsReused:: 1
+Info 241  [22:10:30.356] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 242  [22:10:30.362] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 30 structureChanged: false Elapsed: 6ms
+Info 243  [22:10:30.362] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 244  [22:10:30.364] getCompletionData: Get current token: 0
+Info 245  [22:10:30.364] getCompletionData: Is inside comment: 0
+Info 246  [22:10:30.364] getCompletionData: Get previous token 1: 0
+Info 247  [22:10:30.364] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 248  [22:10:30.399] getCompletionData: Semantic work: 35
+Info 249  [22:10:30.401] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 1
+Info 250  [22:10:30.948] getCompletionData: Get current token: 0
+Info 251  [22:10:30.948] getCompletionData: Is inside comment: 0
+Info 252  [22:10:30.948] getCompletionData: Get previous token 1: 0
+Info 253  [22:10:30.948] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 254  [22:10:30.950] getCompletionData: Semantic work: 2
+Info 255  [22:10:35.544] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 256  [22:10:35.549] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 31 structureChanged: false Elapsed: 5ms
+Info 257  [22:10:35.549] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 258  [22:10:37.217] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 259  [22:10:37.240] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 32 structureChanged: false Elapsed: 23ms
+Info 260  [22:10:37.240] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 261  [22:10:37.332] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 262  [22:10:37.337] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 33 structureChanged: false Elapsed: 5ms
+Info 263  [22:10:37.337] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 264  [22:10:37.979] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 265  [22:10:37.986] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 34 structureChanged: false Elapsed: 7ms
+Info 266  [22:10:37.986] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 267  [22:10:37.987] getCompletionData: Get current token: 1
+Info 268  [22:10:37.987] getCompletionData: Is inside comment: 0
+Info 269  [22:10:37.987] getCompletionData: Get previous token 1: 0
+Info 270  [22:10:37.987] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 271  [22:10:38.21] getCompletionData: Semantic work: 34
+Info 272  [22:10:38.22] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 1
+Info 273  [22:10:38.565] getCompletionData: Get current token: 0
+Info 274  [22:10:38.565] getCompletionData: Is inside comment: 0
+Info 275  [22:10:38.565] getCompletionData: Get previous token 1: 0
+Info 276  [22:10:38.565] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 277  [22:10:38.566] getCompletionData: Semantic work: 1
+Info 278  [22:10:40.183] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 279  [22:10:40.188] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 35 structureChanged: false Elapsed: 5ms
+Info 280  [22:10:40.188] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 281  [22:10:40.503] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 282  [22:10:40.509] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 36 structureChanged: false Elapsed: 5ms
+Info 283  [22:10:40.509] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 284  [22:10:40.848] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 285  [22:10:40.854] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 37 structureChanged: false Elapsed: 6ms
+Info 286  [22:10:40.854] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 287  [22:10:41.716] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 288  [22:10:41.720] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 38 structureChanged: false Elapsed: 4ms
+Info 289  [22:10:41.720] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 290  [22:10:41.721] getCompletionData: Get current token: 0
+Info 291  [22:10:41.721] getCompletionData: Is inside comment: 0
+Info 292  [22:10:41.721] getCompletionData: Get previous token 1: 0
+Info 293  [22:10:41.721] getCompletionData: Get previous token 2: 0
+Info 294  [22:10:41.721] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 295  [22:10:41.748] getCompletionData: Semantic work: 27
+Info 296  [22:10:41.750] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 2
+Info 297  [22:10:42.81] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 298  [22:10:42.86] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 39 structureChanged: false Elapsed: 5ms
+Info 299  [22:10:42.86] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 300  [22:10:42.448] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 301  [22:10:42.454] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 40 structureChanged: false Elapsed: 6ms
+Info 302  [22:10:42.454] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 303  [22:10:43.8] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 304  [22:10:43.11] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 41 structureChanged: false Elapsed: 3ms
+Info 305  [22:10:43.11] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 306  [22:10:43.330] getCompletionData: Get current token: 1
+Info 307  [22:10:43.330] getCompletionData: Is inside comment: 0
+Info 308  [22:10:43.330] getCompletionData: Get previous token 1: 0
+Info 309  [22:10:43.330] getCompletionData: Get previous token 2: 0
+Info 310  [22:10:43.330] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 311  [22:10:43.367] getCompletionData: Semantic work: 37
+Info 312  [22:10:45.921] getCompletionData: Get current token: 0
+Info 313  [22:10:45.921] getCompletionData: Is inside comment: 0
+Info 314  [22:10:45.921] getCompletionData: Get previous token 1: 0
+Info 315  [22:10:45.921] getCompletionData: Get previous token 2: 0
+Info 316  [22:10:45.921] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 317  [22:10:45.921] getCompletionData: Semantic work: 0
+Info 318  [22:10:48.162] Starting updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json
+Info 319  [22:10:48.168] Finishing updateGraphWorker: Project: /home/gintautas/Projects/linite/tsconfig.json Version: 42 structureChanged: false Elapsed: 5ms
+Info 320  [22:10:48.168] Different program with same set of files:: oldProgram.structureIsReused:: 2

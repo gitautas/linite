@@ -1,0 +1,18 @@
+[22:9:15.572] Global cache location '/home/gintautas/.cache/typescript/3.9', safe file path '/home/gintautas/Projects/linite/node_modules/typescript/lib/typingSafeList.json', types map path /home/gintautas/Projects/linite/node_modules/typescript/lib/typesMap.json
+[22:9:15.573] Processing cache location '/home/gintautas/.cache/typescript/3.9'
+[22:9:15.573] Trying to find '/home/gintautas/.cache/typescript/3.9/package.json'...
+[22:9:15.573] Finished processing cache location '/home/gintautas/.cache/typescript/3.9'
+[22:9:15.573] Process id: 6559
+[22:9:15.573] NPM location: /usr/bin/npm (explicit '--npmLocation' not  provided)
+[22:9:15.573] validateDefaultNpmLocation: false
+[22:9:15.573] Npm config file: /home/gintautas/.cache/typescript/3.9/package.json
+[22:9:15.574] Npm config file: '/home/gintautas/.cache/typescript/3.9/package.json' is missing, creating new one...
+[22:9:15.574] Updating types-registry npm package...
+[22:9:15.574] Exec: /usr/bin/npm install --ignore-scripts types-registry@latest
+[22:9:17.422]     Succeeded. stdout:
+    
+    added 1 package, and audited 2 packages in 2s
+
+found 0 vulnerabilities
+
+[22:9:17.422] Updated types-registry npm package

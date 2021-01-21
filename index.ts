@@ -1,7 +1,7 @@
 import express from "express";
 import winston from "winston";
 import categories from "./apps.json";
-import Hashids, * as hashids from "hashids";
+import Hashids from "hashids";
 
 const log = winston.createLogger({
   level: "debug",
